@@ -1,11 +1,12 @@
 import React from 'react';
 import { SignInBtn } from '../../components/index';
+import { NavBar } from '../../containers/index';
 
 const index = () => {
     return (
         <div className="Home">
-            <p>Gavin testing the home page.</p>
-            <SignInBtn />
+            <NavBar />
+        
         </div>
     );
 };
