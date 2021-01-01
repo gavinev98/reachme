@@ -10,7 +10,7 @@ class index extends Component {
     render() {
         return (
             <div className="navbar">
-                <p className="reachme">reachme.</p>
+                <p className="reachme">ReachMe</p>
 
                 <SignInBtn />
             </div>
