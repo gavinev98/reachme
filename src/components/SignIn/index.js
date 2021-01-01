@@ -2,7 +2,7 @@ import React from 'react';
 
 const index = () => {
     return (
-        <div>
+        <div className="signInBtn">
             <button>Sign in with google.</button>
         </div>
     );
