@@ -18,7 +18,7 @@ export const signInWithGoogle = async () => {
 }
 
 //logout of account
-export const logoutOfAccount = () => {
+export const logoutOfAccount = async () => {
     let logoutSuccess;
 
     await auth.signOut()
