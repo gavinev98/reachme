@@ -3,9 +3,11 @@ import { Home } from './pages';
 
 function App() {
   return (
+    <UserContextProvider >
     <div className="app">
       <Home />
     </div>
+    </UserContextProvider>
   );
 }
 
