@@ -3,14 +3,14 @@ import "./style.css";
 import { signInWithGoogle } from '../../services/auth';
 
 
-const index = () => {
+const Index  = () => {
     //using react hooks
     const [user, setUser] = useState();
 
     //sign in user via the auth file.
     const signInClick = async () => {
         let user = await signInWithGoogle();
-
+        //if user is not null.
         if(user) {
             //setting the user via hook method.
             setUser(user);
@@ -26,4 +26,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default Index;
