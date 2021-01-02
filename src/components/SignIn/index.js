@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import "./style.css";
 import { signInWithGoogle } from '../../services/auth';
-import { userContext } from '../../contexts/user';
+import { UserContext } from '../../contexts/user';
 
 
 const Index  = () => {
     //using react hooks
-    const [user, setUser] = useContext(userContext);
+    const [user, setUser] = useContext(UserContext).user;
 
     //sign in user via the auth file.
     const signInClick = async () => {
