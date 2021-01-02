@@ -4,10 +4,9 @@ import "./style.css";
 
 class index extends Component {
 
-
-
-
     
+
+
     render() {
         return (
             <div className="createpost">
