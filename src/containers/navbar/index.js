@@ -12,7 +12,7 @@ const Index = () => {
     return (
         <div className="navbar">
         <p className="reachme">ReachMe</p>
-        {user ?  <p> Welcome back {user.displayName} </p> : <SignInBtn /> }
+        {user ?  <p className="reachme"> Welcome back {user.displayName} ! </p> : <SignInBtn /> }
         </div>
     );
 };
