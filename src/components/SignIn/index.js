@@ -15,13 +15,14 @@ const Index  = () => {
         if(user) {
             //setting the user via hook method.
             setUser(user);
+            console.log(user);
         }
     }
 
 
 
     return (
-        <div className="overview">
+        <div className="overview" onClick={signInClick}>
             <p className="signInBtn">Sign in with google</p>
         </div>
     );
