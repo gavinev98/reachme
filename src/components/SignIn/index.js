@@ -15,7 +15,7 @@ const Index  = () => {
         if(user) {
             //setting the user via hook method.
             setUser(user);
-            console.log(user);
+
         }
     }
 

@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useContext } from 'react';
 import { SignInBtn } from '../../components/index';
 import "./style.css";
-
-class index extends Component {
-    //monitor state
+import { UserContext } from '../../contexts/user';
 
 
+const Index = () => {
 
-    render() {
-        return (
-            <div className="navbar">
-                <p className="reachme">ReachMe</p>
+    const [user, setUser] = useContext(UserContext).user;
 
-                <SignInBtn />
-            </div>
-        );
-    }
-}
+    
+    return (
+        <div className="navbar">
+        <p className="reachme">ReachMe</p>
+        {user ?  <p> Welcome back {user.displayName} </p> : <SignInBtn /> }
+        </div>
+    );
+};
 
-export default index;
+export default Index;
