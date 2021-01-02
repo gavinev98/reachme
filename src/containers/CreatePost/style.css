@@ -1,0 +1,14 @@
+.createpost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.alignNotice {
+    font-family:'Montserrat', sans-serif;    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color:black;
+    padding: 8px;
+}
