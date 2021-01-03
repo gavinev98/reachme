@@ -9,7 +9,7 @@ const Index = () => {
     const [user, setUser] = useContext(UserContext).user;
 
     //react hook to store the users caption of post.
-    const [captioon, setCaption] = useState("");
+    const [caption, setCaption] = useState("");
 
     //react hook to store the users uploaded image.
 
@@ -21,7 +21,7 @@ const Index = () => {
         <div class="createPostContainer">
          <p className="createPostCaption">Create a Post</p>
          <div className="loggedIn" >
-         <textarea className="createPostContent" placeholder="Whats on your mind"></textarea>
+         <textarea className="createPostContent" placeholder="Whats on your mind" value={caption} onChange={(e) => setCaption(e.target.value)}></textarea>
 
         </div>
         </div>
