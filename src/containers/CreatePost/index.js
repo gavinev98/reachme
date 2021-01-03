@@ -11,7 +11,27 @@ const Index = () => {
 
     return (
         <div className="createpost">
-        {user ? <p>Create Post</p> :   <SignInBtn />}
+        {user ? 
+        <div class="createPostContainer">
+         <p className="createPostCaption">Create a Post</p>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        :   <SignInBtn />}
         </div>
     );
 };
