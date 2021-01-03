@@ -3,6 +3,11 @@ import { SignInBtn } from '../../components/index';
 import "./style.css";
 import { UserContext } from '../../contexts/user';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
+import { storage, db } from '../../firebase';
+import makeid from '../../shared/function';
+
+import firebase from 'firebase';
+
 
 const Index = () => {
 
@@ -14,6 +19,9 @@ const Index = () => {
 
     //react hook to store the users uploaded image.
     const [image, setImage] = useState("");
+
+    //react hook to take care of progress
+    const [progress, setProgress] = useState(0);
 
 
     //creating change funtion for uploading an image
@@ -34,7 +42,39 @@ const Index = () => {
     }
     //handle upload of post to network.
     const handleUpload = () => {
+        //handling the image upload
+        if(image) {
+            //generating random number identifier for image.
+            var imageIdentifier = makeid(10);
+            const uploadTask = storage.ref(`images/${imageIdentifier}.jpg`)
+            .put(image);
 
+            uploadTask.on("state_changed", (snapshot) => {
+                //progress function to see how far uploaded
+                const progress = Math.round((snapshot.bytesTransferred/snapshot.totalBytes)*100);
+           
+                setProgress(progress);
+           
+            }, (error) => {
+                console.log(error);
+            }, () => {
+                //get download url and upload the post info.
+                storage.ref("images").child(`${imageIdentifier}.jpg`).getDownloadURL()
+                .then((imageUrl) => {
+
+                    db.collection("posts").add({
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        caption: caption,
+                        photoUrl: imageUrl,
+                        username: user.displayName,
+                        profilePhoto: user.photoURL
+                    })
+
+                });
+            });
+
+     
+        }
 
 
     }
@@ -58,7 +98,7 @@ const Index = () => {
             </label>
             <input id="fileInput" type="file" accept="image/*" onChange={handleChange} />
         </div>
-        {caption ?  <button className="createPostUpload" onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button> : <button className="createPostUpload" disabled onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button>}
+        {caption ?  <button className="createPostUpload" onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>{`Upload ${progress != 0 ? progress : ""}`}</button> : <button className="createPostUpload" disabled onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button>}
 
         </div>
         </div>
