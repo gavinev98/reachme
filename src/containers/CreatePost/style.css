@@ -22,6 +22,7 @@
     height: 250px;
     margin-top: 20px;
     border-radius:20px;
+    padding: 5px;
 }
 
 .createPostCaption {
@@ -33,3 +34,12 @@
     margin-left: 10px;
     font-weight: bold;
 }
+
+.createPostContent {
+    display: flex;
+    font-size: 20px;
+    color: black;
+    width: 80%;
+    border:none;
+}
+
