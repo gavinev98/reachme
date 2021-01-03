@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import { SignInBtn } from '../../components/index';
 import "./style.css";
+import { UserContext } from '../../contexts/user';
 
-class index extends Component {
+const Index = () => {
 
-    
+    //using react hooks to access the users data.
+    const [user, setUser] = useContext(UserContext).user;
 
 
-    render() {
-        return (
-            <div className="createpost">
-            <SignInBtn />
-            <p className="alignNotice">To post and comment!</p>
-            </div>
-        );
-    }
-}
+    return (
+        <div className="createpost">
+        {user ? <p>Create Post</p> :   <SignInBtn />}
+        </div>
+    );
+};
 
-export default index;
+
+export default Index;
