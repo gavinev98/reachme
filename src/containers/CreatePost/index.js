@@ -58,7 +58,8 @@ const Index = () => {
             </label>
             <input id="fileInput" type="file" accept="image/*" onChange={handleChange} />
         </div>
-        <button className="createPostUpload" onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button>
+        {caption ?  <button className="createPostUpload" onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button> : <button className="createPostUpload" disabled onClick={handleUpload} style={{backgroundColor: caption ? "" : "lightgrey"}}>Upload</button>}
+
         </div>
         </div>
             
