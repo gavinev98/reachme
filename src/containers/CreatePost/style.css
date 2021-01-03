@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 200px;
+  
     margin-top: 20px;
     border-radius:20px;
     padding: 5px;
@@ -63,5 +63,5 @@
 }
 
 .image-preview {
-    display:none;
+    display:none !important;
 }

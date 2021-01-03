@@ -49,7 +49,7 @@ const Index = () => {
          <textarea className="createPostContent" placeholder="Whats on your mind" value={caption} onChange={(e) => setCaption(e.target.value)}></textarea>
         </div>
         <div className="imageDisplay">
-        <img id="image-preview" alt="" />
+        <img  id="image-preview" alt="" />
         </div>
         <div className="justifyUpload">
         <div className="createPostUploadImage">
