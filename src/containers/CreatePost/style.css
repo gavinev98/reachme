@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 250px;
+    height: 200px;
     margin-top: 20px;
     border-radius:20px;
     padding: 5px;
@@ -43,3 +43,25 @@
     border:none;
 }
 
+.createPostUploadImage > input {
+    display: none;
+}
+
+.createPostUpload {
+    font-family: 'Poppins', sans-serif;
+    background-color: #14B5F8;
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    color:black;
+}
+
+.justifyUpload {
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.image-preview {
+    display:none;
+}
