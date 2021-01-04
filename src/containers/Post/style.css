@@ -4,8 +4,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-  
     margin-top: 20px;
     border-radius:20px;
-    padding: 5px;
+    padding: 24px 12px;
+}
+
+.postHeader {
+    display: flex;
+}
+
+.postHeaderLeft {
+    display: flex;
+}
+
+.postHeaderImage{
+    height:75px;
+    border-radius: 20px;
 }

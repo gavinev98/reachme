@@ -1,5 +1,6 @@
 import React from 'react';
 import { Post } from '../../containers/index';
+import "./style.css";
 
 const Feed = () => {
 
