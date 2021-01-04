@@ -12,6 +12,7 @@
 .postHeader {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .postHeaderLeft {
@@ -28,6 +29,11 @@
     padding: 0px 20px;
 }
 
+.postCaption  {
+    text-align: left;
+    padding: 0px 10px;
+}
+
 .customBtn{
     border: none;
     border-radius: 10px;
@@ -37,5 +43,11 @@
     color: black;
     font-weight: 400;
     font-size: 20px;
+}
 
+.postImage {
+    width: 100%;
+    object-fit: cover;
+    margin: 20px 0px;
+    border-radius: 10px;
 }

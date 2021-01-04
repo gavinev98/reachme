@@ -18,6 +18,20 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
               </div>
               <button className="customBtn">Delete</button>
             </div>
+
+            <div className="postCenter">
+             <img className="postImage" src={photoURL} />
+
+            </div>
+
+            <div className="postCaption">
+           <p> <span style={{fontWeight: "500", padding: "10px"}}>{username}</span>
+            {caption}
+           </p>
+
+            </div>
+
+
         </div>
     );
 };
