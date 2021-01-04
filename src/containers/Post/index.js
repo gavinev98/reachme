@@ -12,9 +12,11 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             <div className="postHeader" >
             <div className="postHeaderLeft">
               <img className="postHeaderImage" src={profileURL} />
-              <p>{username}</p>
+              <div class="postUsername">
+              <p className="customBtn">{username}</p>
               </div>
-              <button>Delete</button>
+              </div>
+              <button className="customBtn">Delete</button>
             </div>
         </div>
     );
