@@ -1,0 +1,11 @@
+.postContainer {
+    width: 90vh;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    margin-top: 20px;
+    border-radius:20px;
+    padding: 5px;
+}

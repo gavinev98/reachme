@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../../contexts/user';
 
 
+const Index = () => {
 
-const index = () => {
+    //using react hooks to access the users data.
+    const [user, setUser] = useContext(UserContext).user;
+    
+
     return (
-        <div>
-            
+        <div className="postContainer">
+            <div >
+                <img src={user.photoURL} />
+            </div>
         </div>
     );
 };
 
-export default index;
+export default Index;

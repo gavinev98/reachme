@@ -1,6 +1,7 @@
 import React from 'react';
 import { SignInBtn } from '../../components/index';
-import { NavBar, CreatePost } from '../../containers/index';
+import { NavBar, CreatePost, Post } from '../../containers/index';
+
 import "./style.css";
 
 const index = () => {
@@ -8,6 +9,8 @@ const index = () => {
         <div className="home">
             <NavBar />
            <CreatePost />
+           <Post />
+
         </div>
     );
 };
