@@ -32,7 +32,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             </div>
 
             {comments ? comments.map((singleComment) => 
-                <Comment username={singleComment.username} caption={singleComment.caption} />) 
+                <Comment username={singleComment.username} caption={singleComment.comment} />) 
                 : <></>} 
 
 
