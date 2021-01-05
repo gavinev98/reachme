@@ -28,8 +28,9 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
            <p> <span style={{fontWeight: "500", padding: "10px"}}>{username}</span>
             {caption}
            </p>
-
             </div>
+
+            {comments ? comments.map((singleComment) => )}
 
 
         </div>
