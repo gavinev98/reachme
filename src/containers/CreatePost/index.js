@@ -75,6 +75,10 @@ const Index = () => {
             
      
         }
+            //reseting after posting.
+            setCaption("");
+            setProgress(0);
+            setImage(null);
 
 
     }

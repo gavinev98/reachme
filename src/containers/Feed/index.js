@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Post } from '../../containers/index';
 import "./style.css";
 
 const Feed = () => {
 
+    //fething all posts to be displayed on the feed.
+    const [posts, setPosts] = useState([]);
 
 
+    //useEffect is similar to that of componentDidMount() etc will run when DOM is loaded.
+    useEffect(() => {
+       
 
-
+      });
 
 
     return (
         <div className="FeedContainer">
-               <Post caption="My google account" profileURL="https://lh6.googleusercontent.com/-tI7rkJ02638/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuckjByox82KKn7woya41hp-XYEfYGw/s96-c/photo.jpg" username="Gavin Everett" photoURL="https://miro.medium.com/max/1084/1*rDRBsktYbw_aojp9eXi-hg.png"/>
+
+               <Post id={} profileURL={} username={}  photoURL={} caption={} comments={}/>
         </div>
     );
 };
