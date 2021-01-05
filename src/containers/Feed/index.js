@@ -13,7 +13,7 @@ const Feed = () => {
     //when posts value changes the useeffect method will run/
     useEffect(() => {
        db.collection("posts").onSnapshot((snapshot) => {
-           setPosts(snapshot.docs.map((doc) => ({id: doc.id, post: post.data()})))
+           setPosts(snapshot.docs.map((doc) => ({id: doc.id, post: doc.data()})))
        });
 
       }, [posts]);
@@ -22,8 +22,8 @@ const Feed = () => {
     return (
         <div className="FeedContainer">
 
-        {posts.map((id, post) => {
-        return  <Post id={id} profileURL={} username={}  photoURL={} caption={} comments={}/>
+        {posts.map(( {id, post} ) => {
+        return  <Post key={id} id={id} profileURL={post.profilePhoto} username={post.username}  photoURL={post.photoURL} caption={post.caption} comments={post.comments}/>
         })}
         
         
