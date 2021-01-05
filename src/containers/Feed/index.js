@@ -23,7 +23,7 @@ const Feed = () => {
         <div className="FeedContainer">
 
         {posts.map(( {id, post} ) => {
-        return  <Post key={id} id={id} profileURL={post.profilePhoto} username={post.username}  photoURL={post.photoURL} caption={post.caption} comments={post.comments}/>
+        return  <Post key={id} id={id} profileURL={post.profilePhoto} username={post.username}  photoURL={post.photoUrl} caption={post.caption} comments={post.comments}/>
         })}
         
         
