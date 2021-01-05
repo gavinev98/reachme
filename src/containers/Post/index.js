@@ -26,10 +26,12 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             </div>
 
             <div className="postCaption">
+                 
            <p> <span style={{fontWeight: "500", padding: "10px"}}>{username}</span>
             {caption}
            </p>
             </div>
+            <p className="commentsCaption"> Comments </p>
 
             {comments ? comments.map((singleComment) => 
                 <Comment username={singleComment.username} caption={singleComment.comment} />) 
