@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import "./style.css";
+import { Comment } from '../../components/index';
 
 
 //as we want to retrieve all posts we will do this via props and not context.
@@ -30,7 +31,9 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
            </p>
             </div>
 
-            {comments ? comments.map((singleComment) => )}
+            {comments ? comments.map((singleComment) => 
+                <Comment username={singleComment.username} caption={singleComment.caption} />) 
+                : <></>} 
 
 
         </div>
