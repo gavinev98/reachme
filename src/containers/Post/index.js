@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import "./style.css";
 import { Comment } from '../../components/index';
-import { storage } from '../../firebase';
+import { storage, db } from '../../firebase';
 
 
 //as we want to retrieve all posts we will do this via props and not context.
@@ -20,6 +20,13 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             console.log("image sucessfully deleted");
         }).catch((error) => {
             console.log(error);
+        });
+
+        //deleting of the actual post document.
+        db.collection("posts").doc(id).delete().then(() => {
+            console.log("post sucessfully deleted")
+        }).catch((error) => {
+            console.log("Error deleting post" + error);
         })
 
     }
