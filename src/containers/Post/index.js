@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import "./style.css";
-import { Comment } from '../../components/index';
+import { Comment, CommentInput } from '../../components/index';
 import { storage, db } from '../../firebase';
 
 
@@ -9,7 +9,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
 
 
     //creating a delete postHandler to remove a post.
-    const deletePostHandler = (id) => {
+    const deletePostHandler = () => {
         
         //delete post from firebase storage.
         //first we delete image from firebase storage. so we get reference
@@ -56,7 +56,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
            </p>
             </div>
             <p className="commentsCaption"> Comments </p>
-
+            <CommentInput />
 
 
             {comments ? comments.map((singleComment) => 

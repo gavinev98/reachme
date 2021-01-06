@@ -79,7 +79,7 @@ const Index = () => {
              setCaption("");
             setProgress(0);
             setImage(null);
-
+            document.getElementById('image-preview').style.display = "none";
 
     }
 
