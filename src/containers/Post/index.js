@@ -56,7 +56,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
            </p>
             </div>
             <p className="commentsCaption"> Comments </p>
-            <CommentInput />
+            <CommentInput id={id} />
 
 
             {comments ? comments.map((singleComment) => 
