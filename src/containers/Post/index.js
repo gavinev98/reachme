@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import "./style.css";
 import { Comment } from '../../components/index';
+import { storage } from '../../firebase';
 
 
 //as we want to retrieve all posts we will do this via props and not context.
@@ -11,6 +12,16 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
     const deletePostHandler = (id) => {
         
         //delete post from firebase storage.
+        //first we delete image from firebase storage. so we get reference
+        var imageRef = storage.refFromURL(photoURL);
+
+        //delete image.
+        imageRef.delete().then(function() {
+            console.log("image sucessfully deleted");
+        }).catch((error) => {
+            console.log(error);
+        })
+
     }
   
 
@@ -23,7 +34,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
               <p className="customBtn">{username}</p>
               </div>
               </div>
-              <button className="customBtn">Delete</button>
+              <button className="customBtn" onClick={deletePostHandler}>Delete</button>
             </div>
 
             <div className="postCenter">
