@@ -6,6 +6,12 @@ import { Comment } from '../../components/index';
 //as we want to retrieve all posts we will do this via props and not context.
 const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
 
+
+    //creating a delete postHandler to remove a post.
+    const deletePostHandler = (id) => {
+        
+        //delete post from firebase storage.
+    }
   
 
     return (
@@ -33,8 +39,10 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             </div>
             <p className="commentsCaption"> Comments </p>
 
+
+
             {comments ? comments.map((singleComment) => 
-                <Comment username={singleComment.username} caption={singleComment.comment} />) 
+                <Comment  username={singleComment.username} caption={singleComment.comment} />) 
                 : <></>} 
 
 
