@@ -37,7 +37,7 @@ const CommentInput = ({id, comments}) => {
             <textarea placeholder="Write a comment..." rows="1" className="commentInput_TextArea" value={comment} onChange={(e) => setComment(e.target.value)}>
 
             </textarea>
-            <button className="btnPost">Post</button>
+            <button className="btnPost" onClick={postCommentHandler}>Post</button>
         </div>
     );
 };
