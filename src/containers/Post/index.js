@@ -2,15 +2,17 @@ import React, { useState, useContext } from 'react';
 import "./style.css";
 import { Comment, CommentInput } from '../../components/index';
 import { storage, db } from '../../firebase';
+import { UserContext } from '../../contexts/user';
 
 
 //as we want to retrieve all posts we will do this via props and not context.
 const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
+   //getting user context to see if user is logged in.
+   const [user, setUser] = useContext(UserContext).user;
 
-
+   
     //creating a delete postHandler to remove a post.
-    const deletePostHandler = () => {
-        
+    const deletePostHandler = () => {     
         //delete post from firebase storage.
         //first we delete image from firebase storage. so we get reference
         var imageRef = storage.refFromURL(photoURL);
@@ -31,6 +33,15 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
 
     }
   
+    //let the comment section equal a blank div.
+    let commentSection = <></>
+
+    //if the user is logged in then display comments section
+     if(user !== null) {
+         commentSection = (
+            <CommentInput id={id} comments={comments}/>
+         );
+     }
 
     return (
         <div className="postContainer">
@@ -56,8 +67,8 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
            </p>
             </div>
             <p className="commentsCaption"> Comments </p>
-            <CommentInput id={id} comments={comments}/>
-
+            {commentSection}
+            
 
             {comments ? comments.map((singleComment) => 
                 <Comment  username={singleComment.username} caption={singleComment.comment} />) 
