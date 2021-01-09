@@ -30,12 +30,12 @@ const CommentInput = ({id, comments}) => {
         })
 
         //reset state of comment section.
-        
-
-
+        setComment("");
         }
 
     }
+
+    
 
     return (
         <div className="commentInput">

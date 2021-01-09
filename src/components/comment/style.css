@@ -1,4 +1,17 @@
 .comment {
     text-align: left;
     padding: 0px 10px;
+    display: flex;    
+    justify-content: space-between;
+    
+}
+
+.btnDelete {
+    border:none;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'Poppins', sans-serif;
+    color: red;
+    font-weight: 400;
+    font-size: 15px;
 }

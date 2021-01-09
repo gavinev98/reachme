@@ -5,6 +5,7 @@ import { storage, db } from '../../firebase';
 import { UserContext } from '../../contexts/user';
 
 
+
 //as we want to retrieve all posts we will do this via props and not context.
 const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
    //getting user context to see if user is logged in.
