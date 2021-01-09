@@ -43,6 +43,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
          );
      }
 
+
     return (
         <div className="postContainer">
             <div className="postHeader" >
@@ -52,7 +53,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
               <p className="customBtn">{username}</p>
               </div>
               </div>
-              <button className="customBtn" onClick={deletePostHandler}>Delete</button>
+                {user ? (<button className="customBtn" onClick={deletePostHandler}>Delete</button>) : <></>}
             </div>
 
             <div className="postCenter">

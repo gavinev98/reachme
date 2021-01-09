@@ -28,7 +28,12 @@ const CommentInput = ({id, comments}) => {
         db.collection("posts").doc(id).update({
             comments : commentArray
         })
-}
+
+        //reset state of comment section.
+        
+
+
+        }
 
     }
 
