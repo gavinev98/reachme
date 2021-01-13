@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./style.css";
 import CloseIcon from '@material-ui/icons/Close';
 
 
-const comment = ({username, caption, id}) => {
+const Comment = ({username, caption, postID, comments}) => {
+
+
+    //get comments section.
+     //track of all comments already associated with post
+     const [commentArray, setCCommentArray] = useState((comments ? comments : []));
+
+
 
     //removing a comment
     const removeComment = () => {
+
+        //displayy log of comments array
+        console.log(commentArray);
+
 
     }
 
@@ -23,4 +34,4 @@ const comment = ({username, caption, id}) => {
     );
 };
 
-export default comment;
+export default Comment;

@@ -74,7 +74,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             
 
             {comments ? comments.map((singleComment) => 
-                <Comment  username={singleComment.username} caption={singleComment.comment} />) 
+                <Comment postID={singleComment.id}  username={singleComment.username} caption={singleComment.comment} comments={comments} />) 
                 : <></>} 
 
 
