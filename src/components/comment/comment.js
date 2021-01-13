@@ -3,7 +3,14 @@ import "./style.css";
 import CloseIcon from '@material-ui/icons/Close';
 
 
-const comment = ({username, caption}) => {
+const comment = ({username, caption, id}) => {
+
+    //removing a comment
+    const removeComment = () => {
+
+    }
+
+
     return (
         <div className="comment">
         <div className="commentCaption">
@@ -11,7 +18,7 @@ const comment = ({username, caption}) => {
             {caption}
            </p>
            </div>
-           <CloseIcon color="secondary" fontSize="large" /> 
+           <CloseIcon onClick={removeComment} color="secondary" fontSize="large" /> 
         </div>
     );
 };

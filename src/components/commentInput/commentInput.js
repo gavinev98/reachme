@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import "./style.css";
 import { storage, db } from '../../firebase';
 import { UserContext } from '../../contexts/user';
+import makeid from '../../shared/function';
 
 const CommentInput = ({id, comments}) => {
 
@@ -14,12 +15,16 @@ const CommentInput = ({id, comments}) => {
     //track of all comments already associated with post
     const [commentArray, setCCommentArray] = useState((comments ? comments : []));
 
+    //generating random number identifier for each comment uploaded.
+    var commentIdentifer = makeid(10);
+
     //function to upload comment by user to post.
     const postCommentHandler = () => {
 
         //add to commentsArray
         if(comment != "") {
         commentArray.push({
+            id: commentIdentifer,
             comment: comment,
             username: user.displayName
         })

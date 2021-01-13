@@ -43,6 +43,7 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             <CommentInput id={id} comments={comments}/>
          );
      }
+    
 
 
     return (
