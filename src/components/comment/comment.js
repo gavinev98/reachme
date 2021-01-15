@@ -15,7 +15,7 @@ const Comment = ({username, caption, comments, commentID}) => {
     //removing a comment
     const removeComment = () => {
 
-        //create a blank array 
+        //create a blank array to store updated comments.
         let updatedComments = [];
 
         //filter arrayt of comments without out one selected
@@ -23,10 +23,8 @@ const Comment = ({username, caption, comments, commentID}) => {
                 return item.id !== commentID;
             });
 
-   
-        console.log(updatedComments);
-        console.log(commentArray);
-        
+
+
 
 
     }
@@ -39,7 +37,7 @@ const Comment = ({username, caption, comments, commentID}) => {
             {caption}
            </p>
            </div>
-           <CloseIcon onClick={removeComment} color="secondary" fontSize="large" /> 
+           <CloseIcon className="close" onClick={removeComment} color="secondary" fontSize="large" /> 
         </div>
     );
 };
