@@ -3,20 +3,30 @@ import "./style.css";
 import CloseIcon from '@material-ui/icons/Close';
 
 
-const Comment = ({username, caption, postID, comments}) => {
+const Comment = ({username, caption, comments, commentID}) => {
 
 
     //get comments section.
      //track of all comments already associated with post
      const [commentArray, setCCommentArray] = useState((comments ? comments : []));
 
-
+        
 
     //removing a comment
     const removeComment = () => {
 
-        //displayy log of comments array
+        //create a blank array 
+        let updatedComments = [];
+
+        //filter arrayt of comments without out one selected
+           updatedComments = commentArray.filter(function(item) {
+                return item.id !== commentID;
+            });
+
+   
+        console.log(updatedComments);
         console.log(commentArray);
+        
 
 
     }
