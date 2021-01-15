@@ -4,7 +4,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { db } from '../../firebase';
 
 
-const Comment = ({username, caption, comments, commentID}) => {
+const Comment = ({username, caption, comments, commentID, postIdentifier}) => {
 
 
     //get comments section.
@@ -26,7 +26,7 @@ const Comment = ({username, caption, comments, commentID}) => {
 
 
             //update the database with updated comments for a specific post.
-            db.collection("posts").doc(postIdentifer).update({
+            db.collection("posts").doc(postIdentifier).update({
                 comments: updatedComments
             }, (error) => {
                 console.log(error);

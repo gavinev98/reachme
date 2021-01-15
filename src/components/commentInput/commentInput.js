@@ -24,6 +24,7 @@ const CommentInput = ({id, comments}) => {
         //add to commentsArray
         if(comment != "") {
         commentArray.push({
+            postID : id,
             id: commentIdentifer,
             comment: comment,
             username: user.displayName
