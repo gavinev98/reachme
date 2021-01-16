@@ -24,6 +24,7 @@ const CommentInput = ({id, comments}) => {
         //add to commentsArray
         if(comment != "") {
         commentArray.push({
+            key: id,
             postID : id,
             id: commentIdentifer,
             comment: comment,
@@ -33,7 +34,9 @@ const CommentInput = ({id, comments}) => {
         //add the comments back to the original collection.
         db.collection("posts").doc(id).update({
             comments : commentArray
-        })
+        });
+
+        console.log(commentArray);
 
         //reset state of comment section.
         setComment("");
