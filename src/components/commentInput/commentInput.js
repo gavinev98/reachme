@@ -36,8 +36,7 @@ const CommentInput = ({id, comments}) => {
             comments : commentArray
         });
 
-        console.log(commentArray);
-
+     
         //reset state of comment section.
         setComment("");
         }

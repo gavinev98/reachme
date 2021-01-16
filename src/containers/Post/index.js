@@ -34,13 +34,24 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
 
     }
   
-    //let the comment section equal a blank div.
-    let commentSection = <></>
+    //let the comment input equal a blank div.
+    let commentSection = <></>;
 
     //if the user is logged in then display comments section
      if(user !== null) {
          commentSection = (
             <CommentInput id={id} comments={comments}/>
+         );
+     }
+
+     //let the comments section equal to blank div.
+     let commentOutput = <p className="commentsViewer">Please login to view comments...</p>;
+     //if there is a user logged in then we display the comments section.
+     if(user !== null) {
+        commentOutput = (
+            comments ? comments.map((singleComment) => 
+                <Comment postIdentifier={singleComment.postID} commentID={singleComment.id}  username={singleComment.username} caption={singleComment.comment} comments={comments} />) 
+                : <></>
          );
      }
     
@@ -72,12 +83,8 @@ const Index = ({profileURL, username, id, photoURL, caption, comments}) => {
             <p className="commentsCaption"> Comments </p>
             {commentSection}
             
-
-            {comments ? comments.map((singleComment) => 
-                <Comment postIdentifier={singleComment.postID} commentID={singleComment.id}  username={singleComment.username} caption={singleComment.comment} comments={comments} />) 
-                : <></>} 
-
-
+            {commentOutput}
+        
         </div>
     );
 };

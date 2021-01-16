@@ -65,3 +65,11 @@
     font-weight:400;
     color:darkgrey;
 }
+
+.commentsViewer{
+    text-align:left;
+    padding: 0px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:400;
+    color:darkgrey;
+}

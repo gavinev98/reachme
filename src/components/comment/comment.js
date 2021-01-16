@@ -4,6 +4,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { db } from '../../firebase';
 
 
+
 const Comment = ({username, caption, comments, commentID, postIdentifier}) => {
 
 
@@ -30,11 +31,16 @@ const Comment = ({username, caption, comments, commentID, postIdentifier}) => {
             }, (error) => {
                 console.log(error);
             });
+
+            console.log(updatedComments);
         
     }
 
+    
+
 
     return (
+        
         <div className="comment">
         <div className="commentCaption">
         <p> <span style={{fontWeight: "500", padding: "10px"}}>{username}</span>
