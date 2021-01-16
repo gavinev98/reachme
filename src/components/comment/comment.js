@@ -11,7 +11,6 @@ const Comment = ({username, caption, comments, commentID, postIdentifier}) => {
      //track of all comments already associated with post
      const [commentArray, setCCommentArray] = useState((comments ? comments : []));
 
-        
 
     //removing a comment
     const removeComment = () => {
