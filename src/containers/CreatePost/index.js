@@ -23,12 +23,15 @@ const Index = () => {
     //react hook to take care of progress
     const [progress, setProgress] = useState(0);
 
+    
+
 
     //creating change funtion for uploading an image
     const handleChange = (event) => {
 
         if (event.target.files && event.target.files[0]) {
             let img = event.target.files[0];
+
                 //set image state using react hook.
               setImage(URL.createObjectURL(img));
 
@@ -62,10 +65,11 @@ const Index = () => {
                 storage.ref("images").child(`${imageIdentifier}.jpg`).getDownloadURL()
                 .then((imageUrl) => {
 
+        
                     db.collection("posts").add({
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         caption: caption,
-                        photoUrl: imageUrl,
+                        photoUrl: imageUrl + ".jpg",
                         username: user.displayName,
                         profilePhoto: user.photoURL
                     })
